@@ -2,6 +2,9 @@
 ## Eclipse
 #################
 
+#video lectures
+Video_Lecutures/
+
 *.pydevproject
 .project
 .metadata
