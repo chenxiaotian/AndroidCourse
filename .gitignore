@@ -3,7 +3,7 @@
 #################
 
 #video lectures
-Video_Lecutures/*
+Video_Lectures/*
 
 *.pydevproject
 .project
