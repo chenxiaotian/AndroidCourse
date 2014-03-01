@@ -1,0 +1,21 @@
+AlarmManager:
+--getSystemSErvice(Context.ALERM_SERVICE): gets a reference to the AlarmManager
+
+Creating Alarm:
+--void set(int type, long triggerAtTime, PendingIntent operation)
+--void setRepeating(int type, long triggerAtTime, long interval, PendingIntent operation)
+--void setInexactRepeating(int type, long triggerATTime, long interval, pendingIntent operation)
+  interval options: INTERVAL_FIFTEEN_MINUTES, INTERVAL_HALF_HOUR, INTERVAL_HALF_DAY, INTERVAL_DAY
+  if those options are not set, it's the same as setRepeating
+
+Alarm types:
+RTC_WAKEUP: fire the alarm at the specified time, wake up the device need be
+RTC: fire the alarm at the time, but don't wake up the device
+ELAPSED_REATIME
+ELAPSED_REALTIME_WAKEUP: will wake up the device
+
+Pending Intent:
+--
+PendingIntent getActivity
+PendingIntent getBroadcast
+PendingIntent getService
