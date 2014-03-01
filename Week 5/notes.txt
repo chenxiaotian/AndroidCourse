@@ -1,5 +1,5 @@
 AlarmManager:
---getSystemSErvice(Context.ALERM_SERVICE): gets a reference to the AlarmManager
+--Context.getSystemService(Context.ALERM_SERVICE): gets a reference to the AlarmManager
 
 Creating Alarm:
 --void set(int type, long triggerAtTime, PendingIntent operation)
@@ -15,7 +15,21 @@ ELAPSED_REATIME
 ELAPSED_REALTIME_WAKEUP: will wake up the device
 
 Pending Intent:
---
 PendingIntent getActivity
 PendingIntent getBroadcast
 PendingIntent getService
+
+=================================
+
+Some useful networking support classes:
+JAVA.NET (SOCKET, URL)
+ORG.APACHE (HTTPRequest, HTTPResponse)
+ANDROID.NET (URI, AndroidHTTPClient, AudioStream)
+
+Sending HTTP Requests
+--Socket
+--HttpUrlConnection	
+--AndroidHttpClient
+
+AndroidHttpClient
+--AndroidHttpClient myClient - AndroidHttpClient.newInstance("");
