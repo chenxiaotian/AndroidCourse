@@ -21,6 +21,7 @@ import android.os.AsyncTask;
 import android.os.Vibrator;
 import android.util.Log;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 public class DownloaderTask extends AsyncTask<String, Void, String[]> {
 
@@ -214,6 +215,16 @@ public class DownloaderTask extends AsyncTask<String, Void, String[]> {
 							notificationManager.notify(MY_NOTIFICATION_ID, notificationBuilder.build());
 							
 							log("Notification Area Notification sent");
+						}
+						else {
+							Toast toast;
+							if(success) {
+								toast = Toast.makeText(mApplicationContext, successMsg, Toast.LENGTH_SHORT);
+							}
+							else {
+								toast = Toast.makeText(mApplicationContext, failMsg, Toast.LENGTH_SHORT);
+							}
+							toast.show();
 						}
 					}
 				}, 
