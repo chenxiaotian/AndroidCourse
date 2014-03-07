@@ -1,0 +1,38 @@
+canvas: context or mechanism to draw on a bitmap
+--can access using generic Views, or to SurfaceViews
+--use generic View when updates in infrequent
+
+
+
+View Animation Classes
+--TransitionDrawable: for animating a transition between 2 views
+--AnimationDrawable: for creating frame by frame drawables
+--Animation: for creating tween animations
+
+Animation
+--transformation is applied to the contents of the view
+
+Property Animation
+ValueAnimator: timing engine (main class that controls the animation)
+TimeInterpolate: define how values change as a function of time
+AnimatorUpdateListener: called back at every animation frame change (defines the onAnimationUpdate method)
+TypeEvaluator: calculates a property's value at a given point in animation (defines an evalute method)
+AnimatorSet: combines individual animations to create more complex animations (combine animator objects into more complex 
+
+animator objects)
+
+e.g.
+ValueAnimator animator = ValueAnimator.ofObject(new ArgbEvaluator(), RED, BLUE);
+  argbEvaluator: evaluator class which knows how to evaluate integer representation of colors
+  RED: starting point
+  BLUE: ending point
+
+
+sample property animator
+Runnable fadeIn = new Runnable() {
+  public void run() {
+    mImageView.animate().setDuration(3000).setInterpolator(new LinearInterpolator()).alpha(1.0f).endWithAction(rotate)
+  }
+}
+
+need "rotate" which is another Runnable
