@@ -34,3 +34,7 @@ onTouch() called when a touch event oocrus, called before the vent is develiered
 --return T if it consumes the event, false if not
 
 
+GestureDetector: can recognize common gestures
+--Activity need a GestureDetector class, give an object that implements GestureDetector.OnGestureListener interface
+--activity will receive ontouchEvent when activity is touched
+--
