@@ -1,0 +1,36 @@
+MotionEvent: represents a movement
+
+contains
+--Action Code (what type of action)
+--ACtion Values (info about time, source, location, etc)
+
+Multitouch: emit one movement trace per touch source
+--each touch source is called  "pointer"
+--each pointer has a unique ID for as long as it is active
+--MotionEvents can refer to multiple pointer
+--each pointer has an index within the event (differnet from the unique ID)
+
+some MotionEvent actions
+--ACTION_DOWN
+--ACTION_POINTER_DOWN (another finger has started to touch the finger)
+--ACTION_POINTER_UP (one of the fingers has stopped touch)
+--ACTION_MOVE
+--ACTION_UP
+--ACTION_CANCEL (something has prematurely canceled the gesture)
+
+
+MotionEvents methods
+--getActionMasked(): returns the action code
+--getActionIndex(): returns the index of the pointer (e.g. find the index of ACTION_POINTER_DOWN)
+--getPointerId(int pointerIndex)
+--getPointercount(): returns # of pointers
+--getX(int pointerIndex)
+--getY(int pointerIndex)
+--findPointerIndex()
+
+View.onTouchListener defines touch event callback methods
+View.setOnTouchListener
+onTouch() called when a touch event oocrus, called before the vent is develiered
+--return T if it consumes the event, false if not
+
+
