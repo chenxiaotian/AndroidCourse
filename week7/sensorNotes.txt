@@ -1,0 +1,30 @@
+Sensors:
+measure (1) motion, (2) position, (3) environment (amount of light, temperature humidity, etc)
+
+SensorManager -- system service that manges sensors
+--getSystemService(Context.SENSOR_SERVICE): gets an instance of SensorManager
+--SensorManager.getDefaultSensor(int type): gets a specific sensor
+  e.g. Sensor.TYPE_ACCELEROMETER, Sensor.TYPE_MAGNETIC_FIELD, Sensor.TYPE_PRESSURE
+
+SensorEventListener: must implement this to receive info from the listener
+--void onAccurateMethodChanged(Sensor sensor, int accuracy)
+  first arg: the sensor that changed
+  2nd arg: the new accuracy
+--void onSensorChanged(SensorEvent event)
+  1st arg: the sensor event corresponding to the new reading
+--Use the SensorManager to register/unregister for SensorEvents
+
+To register:
+public boolean registerListener(SensorEventListner listener, Sensor sensor, int rate)
+  1st + 2nd: the listener that will be called back to for the sensor to listen to (1st can be "this")
+  3rd: the rate in which you want the sensor to be pulled
+
+To unregister:
+public void unregisterListener(SensorEventListener listener, Sensor sensor)
+  1st: the listner (could be "this")
+  2nd: the sensor you no longer want to listen to (can be undefined)
+
+SensorEvent: represents a sensor event 
+--data is sensor-specific
+--will include
+  --sensor type, time-stamp, accuracy, measurement data
